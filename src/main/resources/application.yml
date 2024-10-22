@@ -1,0 +1,23 @@
+server:
+  port: 9000
+
+api:
+  version: v1
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/HIMS
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3307/hims_demo
+    password: root
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver	
